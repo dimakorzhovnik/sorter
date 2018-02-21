@@ -34,7 +34,7 @@ class Sorter {
   
 
   setComparator(compareFunction) {
-    // your implementation
+   
     this.comparator = compareFunction;
   }
 }
