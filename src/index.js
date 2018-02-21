@@ -21,13 +21,21 @@ class Sorter {
   }
 
   sort(indices) {
-    let bufferArray = [];
-    bufferArray.sort(this.comparator);
+      let tmpList = [];
+      indices.sort();
+      for (let i = 0; i < indices.length; i++) {
+          tmpList.push(this.myArray[indices[i]]);
+      }
+      tmpList.sort(this.comparator);
+      for (let i = 0; i < tmpList.length; i++) {
+          this.myArray[indices[i]] = tmpList[i];
+      }
   }
+  
 
   setComparator(compareFunction) {
     // your implementation
-    this.myArray = compareFunction;
+    this.comparator = compareFunction;
   }
 }
 
